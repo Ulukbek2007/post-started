@@ -38,7 +38,7 @@ const Form = () => {
                 material: material,
                 person: person,
                 season: season,
-                count:0
+                count: 0
             })
             setEditClass('success')
         }
@@ -52,7 +52,12 @@ const Form = () => {
     console.log(color);
     const arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     console.log(season);
-
+    const delImg = (id) => {
+        setAll(all.filter((el, index) => index !== id))
+    }
+    const delimgrImg = (id) => {
+        setIngredient(ingredient.filter((el, index) => index !== id))
+    }
     return (
         <div>
             <button className='back' onClick={() => navigate(-1)}>Назад</button>
@@ -139,19 +144,26 @@ const Form = () => {
                 <h3>Фото товара</h3>
                 <div className='img-choose-file'>
                     {all.length > 0 && all.map((el, index) => (
-                        <img key={index} src={el} />
+                        <div>
+                            <img key={index} src={el} />
+                            <img className='important' onClick={() => delImg(index)} src={close} alt="" />
+                        </div>
                     ))}
                 </div>
                 <h3>Фото детали</h3>
 
                 <div className='img-choose-file'>
                     {ingredient.length > 0 && ingredient.map((el, index) => (
-                        <img key={index} src={el} />
+                        <div key={index}>
+                            <img src={el} />
+                            <img className='important' onClick={() => delimgrImg(index)} src={close} alt="" />
+                        </div>
+
                     ))}
                 </div>
             </div>
             <button className={`send-button ${editCLass}`} onClick={sendPost}>post</button>
-        </div>
+        </div >
     )
 }
 
