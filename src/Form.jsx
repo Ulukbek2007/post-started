@@ -25,7 +25,7 @@ const Form = () => {
             setEditClass('yellowed')
         }, 1500);
         if (all.length > 0 && ingredient.length > 0 && name.length > 0 && category.length > 0 && description.length > 0 && size.length > 0 && price.length > 0 && country.length > 0 && material.length > 0) {
-            const { data } = await axios.post('https://660a59950f324a9a2884bb7c.mockapi.io/data/category', {
+            const { data } = await axios.post('https://660a59950f324a9a2884bb7c.mockapi.io/data/fivetoone', {
                 name: name,
                 category: category,
                 img: all,
