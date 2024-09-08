@@ -50,7 +50,7 @@ const Form = () => {
         setColor(color.filter((el, index) => index !== id))
     }
     console.log(color);
-    const arrNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    const arrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     console.log(season);
 
     return (
